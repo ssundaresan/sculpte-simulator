@@ -1,6 +1,5 @@
-###### THIS IS STILL A WORK IN PROGRESS. PLEASE CONTACT ME AT ####
-###### srikanth@gatech.edu IF YOU HAVE ISSUES RUNNING/UNDERSTANDING ####
-###### THE SIMULATOR ####
+###### THIS IS STILL A WORK IN PROGRESS. 
+#### srikanth@gatech.edu
 
 To run, "./simulator"
 A standard python installation should suffice.
