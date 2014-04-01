@@ -1,0 +1,48 @@
+####Simulation####
+SIM_DUR -- 100 # time duration of simulation, in seconds#
+ITER_DUR -- 4 # []
+TRANS_DUR   -- 0 # []
+
+####Topology####
+topo_dir -- data/topos/ # directory where topology files are stored#
+topo_name -- rocketfuel_6461 # prefix of the topology files#
+ip_file -- rocketfuel_6461_ips# file with node-id - ip mapping#
+topo_file -- rocketfuel_6461_topo # file with topology#
+duplex -- no
+numslices   -- 3 # []
+####Initial Wt setting -- base_rand #to set initial link wts. choice:
+Initial Wt setting -- base_rand #to set initial link wts. choice:
+ #### base_rand -- perturb base wts specifies in topo file
+ #### rand -- random wt in range(0,initial random wt value)
+Range for initial Random Wt -- 0 # []
+Short Paths -- ECMPSP # variant of shortest path used - plain shortest path -
+ #### -- Dijkstra's (SP), or discrete ECMP (ECMPSP) or ECMP with flows 
+ #### as fluid model -- FLUIDECMPSP####
+Routing -- normal # choices - splicing or normal(no splicing implementation yet#)
+
+####Traffic Matrix####
+tmtype -- BIMODAL # Model to generate TM - choice GRAVITY# 
+tm_name -- rocketfuel_6461_tm
+tm_dir -- data/traffic/matrices/matrices/ # Model to generate TM - choice GRAVITY# 
+TMgenerate -- 1 # Use existing TM (0) (in dir tree for current topo) or not (1) #
+FRAC_UTIL -- 0.15 # Avg utilization of a link to generate TM#
+####STATIC_LOAD -- none
+
+####Flow####
+Flow Size -- Exponential # Size of flow distribution - choices - Exponential#
+Lambda -- 35 # Avg size of flow#
+####Lambda -- 0.083 # Avg size of flow#
+Flow Arrival -- Poisson # flow arrival process - choices - Poisson. Arrival rate - 
+ #### -- determined by TM and avg flow size####
+Flow Tput -- standard # choice of 3 throughputs for flow - 0.5,1,10#
+
+####Link Update####
+Threshold theta -- 0.0 # []
+Link Weight Update -- KeyMetric_ecmp
+####Link Weight Update -- static
+Number of key metrics -- 1
+Number of links to avoid -- 5
+
+####Output####
+outdir -- data/output/exp/
+
